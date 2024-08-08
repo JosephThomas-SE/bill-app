@@ -84,24 +84,17 @@ const InvoiceForm = () => {
     }));
   };
 
-  //Hadle submit
+  // Move useEffect to the top level
+  useEffect(() => {
+    const { numberOfDays, perDayCost, numberOfRooms } = formData.accommodationDetails;
+    const { numberOfPersons, ratePerPerson, numberOfTimesFoodProvided } = formData.foodDetails;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    // Calculate total accommodation and food costs
-    const totalAccommodationCost =
-      formData.accommodationDetails.numberOfDays *
-      formData.accommodationDetails.perDayCost *
-      formData.accommodationDetails.numberOfRooms;
-  
-    const totalFoodCost =
-      formData.foodDetails.numberOfPersons *
-      formData.foodDetails.ratePerPerson *
-      formData.foodDetails.numberOfTimesFoodProvided;
-  
+    const totalAccommodationCost = numberOfDays * perDayCost * numberOfRooms;
+    const totalFoodCost = numberOfPersons * ratePerPerson * numberOfTimesFoodProvided;
+    const totalCost = totalAccommodationCost + totalFoodCost;
+
     // Set the total cost in formData
-    setFormData((prevData) => ({
+    setFormData(prevData => ({
       ...prevData,
       accommodationDetails: {
         ...prevData.accommodationDetails,
@@ -111,8 +104,16 @@ const InvoiceForm = () => {
         ...prevData.foodDetails,
         totalFoodCost,
       },
-      totalCost: totalAccommodationCost + totalFoodCost,
+      totalCost,
     }));
+    console.log(setFormData);
+    console.log(formData);
+  }, [formData.accommodationDetails, formData.foodDetails, formData]);
+
+
+  //Hadle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
   
     // Call the function to save the invoice
     await saveInvoiceToFirestore();
