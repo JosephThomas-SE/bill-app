@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import InvoiceForm from './components/invoiceForm';
+import InvoiceList from './components/invoiceList';
+import './App.css'; // You can add your custom styles here
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+      <div className="app">
+        <header>
+          <h1>Invoice App</h1>
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/create-invoice">Create Invoice</a></li>
+              <li><a href="/invoice-list">Invoice List</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create-invoice" element={<InvoiceForm />} />
+            <Route path="/invoice-list" element={<InvoiceList />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+};
+
+// A simple home component
+const Home = () => {
+  return (
+    <div>
+      <h2>Welcome to the Invoice App</h2>
+      <p>Select an option from the menu to get started.</p>
     </div>
   );
-}
+};
 
 export default App;
