@@ -1,0 +1,47 @@
+/* InvoiceList Styles */
+.invoice-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 26px;
+  }
+  
+  .invoice-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 240px;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .invoice-card:hover {
+    transform: scale(1.05);
+    background-color: #ffffff;
+  }
+  
+  .invoice-card h3 {
+    margin-top: 0;
+  }
+  
+  .invoice-card p {
+    margin: 8px 0;
+  }
+  
+  .invoice-card .view-details {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .invoice-card .view-details:hover {
+    background-color: #0056b3;
+  }

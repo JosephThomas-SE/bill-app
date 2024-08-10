@@ -1,0 +1,93 @@
+/* InvoiceForm Styles */
+/* Container for the invoice form */
+.invoice-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 12px; /* Updated for a more rounded look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    background: rgba(255, 255, 255, 0.5); /* Glassy effect with transparency */
+    backdrop-filter: blur(10px); /* Blur effect for the glassy look */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for glassy effect */
+  }
+  
+  /* Container for form fields in the same line */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between fields */
+  }
+  
+.form-row > div {
+    flex: 1; /* Each field takes equal space */
+  }
+
+  /* Styling for form elements */
+  .invoice-form input {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* More rounded input fields */
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  }
+  
+  /* Styling for form buttons */
+  .invoice-form button {
+    width: auto;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px; /* Rounded button corners */
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    float: right; /* Align button to the right */
+  }
+  
+  .invoice-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Label styling */
+  .invoice-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  /* Error message styling */
+  .invoice-form .error {
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  
+  /* Grouping Accommodation and Food details */
+  .group {
+    margin: 20px 0;
+  }
+  
+  .group h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #333;
+  }
+
+  /* Container for form fields in columns */
+  .group .form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between fields */
+  }
+  
+  .group .form-row {
+    display: flex;
+    gap: 20px; /* Space between fields */
+  }
+  
+  .group .form-row > div {
+    flex: 1; /* Each field takes equal space */
+  }

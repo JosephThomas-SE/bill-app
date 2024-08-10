@@ -1,0 +1,58 @@
+/* invoice Details Download PDF */
+#invoice {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+  }
+  
+  #invoice h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #invoice p {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  #invoice strong {
+    color: #000;
+  }
+  
+  #invoice .customer-info, #invoice .cost-info, #invoice .date-info {
+    margin-bottom: 20px;
+  }
+  
+  #invoice .customer-info p,
+  #invoice .cost-info p,
+  #invoice .date-info p {
+    margin-bottom: 8px;
+  }
+  
+  #invoice .signature-seal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+  }
+  
+  #invoice .signature-seal img {
+    max-width: 150px;
+  }
+  
+  #invoice .signature-seal .signature {
+    text-align: left;
+  }
+  
+  #invoice .signature-seal .seal {
+    text-align: right;
+  }
+  
