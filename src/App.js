@@ -1,7 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import InvoiceForm from './components/invoiceForm';
-import InvoiceList from './components/invoiceList';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import InvoiceForm from './components/Form';
+import InvoiceList from './components/List';
+import InvoiceDetail from './components/Details';
+
 import './App.css'; // You can add your custom styles here
 
 const App = () => {
@@ -11,18 +13,17 @@ const App = () => {
         <header>
           <h1>Invoice App</h1>
           <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/create-invoice">Create Invoice</a></li>
-              <li><a href="/invoice-list">Invoice List</a></li>
-            </ul>
+              <div><Link to="/">Home</Link></div>
+              <div><Link to="/create-invoice">Create Invoice</Link></div>
+              <div><Link to="/invoice-list">Invoice List</Link></div>
           </nav>
         </header>
-        <main>
+        <main className="content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create-invoice" element={<InvoiceForm />} />
             <Route path="/invoice-list" element={<InvoiceList />} />
+            <Route path="/invoices/:id" element={<InvoiceDetail />} />
           </Routes>
         </main>
       </div>
